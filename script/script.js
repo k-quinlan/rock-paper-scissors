@@ -22,27 +22,34 @@ console.log(getCompChoice());
 
 //clean player input
 function cleanPlayerInput(input) {
-    let cleanInput = toLowerCase.toString(input);
+    let cleanInput = input.toString().toLowerCase();
     return cleanInput;
 }
 
 //check player input
 function checkPlayerInput(cleanInput) {
-    if (cleanInput === "rock" || "scissors" || "paper") {
+    if (cleanInput === "rock" || cleanInput === "scissors" || cleanInput === "paper") {
         //do nothing - check passed
     } else {
-        alert("Incorrect Input");
+        throw "Incorrect Input";
     }
     return;
 }
 
 //get player input
 function getPlayerinput() {
-    let input = prompt("Rock, paper, scissors?");
-    let cleanInput = cleanPlayerInput(input);
-    checkPlayerinput(cleanInput);
-    return cleanInput;
+    try {
+        let input = prompt("Rock, paper, scissors?");
+        let cleanInput = cleanPlayerInput(input);
+        checkPlayerInput(cleanInput);
+        return cleanInput;
+    } catch (e) {
+        alert(e);
+    }
 }
+
+
+
 
 
 //function play a round: playerselection(string - any capitalisation), computerselection
@@ -51,3 +58,5 @@ function getPlayerinput() {
 
 
 //script
+alert(getPlayerinput());
+
