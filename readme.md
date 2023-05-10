@@ -1,0 +1,1 @@
+This is the odin rock paper scissors project for javascript.  Have added css to make game visual.
