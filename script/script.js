@@ -48,15 +48,41 @@ function getPlayerinput() {
     }
 }
 
-
-
-
-
 //function play a round: playerselection(string - any capitalisation), computerselection
+function playRound(playerSelection,computerSelection) {
+    if (playerSelection === computerSelection) {
+        return `You draw: ${playerSelection} matches ${computerSelection}`;
+    } else {
+        let testValue = playerSelection.charAt(0)+computerSelection.charAt(0);
+        switch (testValue) {
+            case 'rp':
+            case 'ps':
+            case 'sr':
+                return `You lose: ${playerSelection} is beaten by ${computerSelection}`;
+                break;
+            case 'rs':
+            case 'pr':
+            case 'sp':
+                return `You win: ${playerSelection} beats ${computerSelection}`;
+                break;
+        }
+    }
+
+// R,P - L
+// R,S - W
+// P,R - W
+// P,S - L
+// S,R - L
+// S,P - W
+
+}
+
+
+
 //return: "You XXXXX: XXXX beats XXXX"
 
 
 
 //script
-alert(getPlayerinput());
-
+//alert(getPlayerinput());
+alert(playRound(getPlayerinput(),getCompChoice()));
