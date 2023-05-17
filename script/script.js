@@ -85,4 +85,4 @@ function playRound(playerSelection,computerSelection) {
 
 //script
 //alert(getPlayerinput());
-alert(playRound(getPlayerinput(),getCompChoice()));
+//alert(playRound(getPlayerinput(),getCompChoice()));
